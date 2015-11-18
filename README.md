@@ -44,7 +44,7 @@ Iottly runs on Linux / Docker.
 - iottly-xmpp-broker:
   - http://127.0.0.1:9090
 - iottly-client-core and iottly-client-UI:
-  - http:127.0.0.1:8521
+  - http://127.0.0.1:8521
 
 
 ## Start the development device:
