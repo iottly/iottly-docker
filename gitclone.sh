@@ -1,0 +1,9 @@
+git clone git@github.com:iottly/iottly-xmpp-broker.git
+git clone git@github.com:iottly/iottly-licence-adder.git
+git clone git@github.com:iottly/iottly-httpforward.git
+git clone git@github.com:iottly/iottly-docker.git
+git clone git@github.com:iottly/iottly-device-agent-py.git
+git clone git@github.com:iottly/iottly-console.git
+git clone git@github.com:iottly/iottly-client-UI.git
+git clone git@github.com:iottly/iottly-client-core.git
+git clone git@github.com:iottly/iottly-core.git
