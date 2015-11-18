@@ -56,7 +56,7 @@ Iottly makes use of Docker Compose override feature to combine the following nee
 - production needs: source files have to be shipped within the container
 - development needs: source files have to be shared among container and host
 
-For this purpose production services are defined in the main docker-compose.yml file, while development overrides are defined in the docker-compose.override.yml. Specifically the override file defines how the development host directories overlay the container directories. In this way a change in a source file is immediatly available to the container after saving it.
+For this purpose production services are defined in the main [`docker-compose.yml`](https://github.com/iottly/iottly-docker/blob/master/docker-compose.yml) file, while development overrides are defined in the [`docker-compose.override.yml`](https://github.com/iottly/iottly-docker/blob/master/docker-compose.override.yml). Specifically the override file defines how the development host directories overlay the container directories. In this way a change in a source file is immediatly available to the container after saving it.
 
 # Useful docker (compose) commands to inspect what's going on
 
