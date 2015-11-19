@@ -44,6 +44,8 @@ Iottly runs on Linux / Docker.
 
 - iottly-core and iottly-console:
   - http://127.0.0.1:8520/admin
+- MoC static console:
+  - http://127.0.0.1:8520/static/console.html
 - iottly-xmpp-broker:
   - http://127.0.0.1:9090
 - iottly-client-core and iottly-client-UI:
