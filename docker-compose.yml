@@ -57,4 +57,9 @@ iottlyclientcore:
   volumes_from: 
    - iottlyclientui
 
-
+iottlyhttploadbalancer:
+    build: ../iottly-http-load-balancer/.
+    ports:
+      - "8550:8550"
+    volumes_from: 
+      - iottlyconsole
