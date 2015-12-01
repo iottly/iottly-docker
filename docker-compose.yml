@@ -31,14 +31,10 @@ xmppbroker:
 iottlyconsole:
   build: ../iottly-console/.
   command: /bin/true
-  volumes: 
-   - /iottly_console
 
 
 iottlycore:
   build: ../iottly-core/.
-  ports:
-   - "8520:8520"
   volumes_from: 
    - iottlyconsole
 
@@ -56,6 +52,7 @@ iottlyclientcore:
    - "8521:8521"
   volumes_from: 
    - iottlyclientui
+
 
 iottlyhttploadbalancer:
     build: ../iottly-http-load-balancer/.
