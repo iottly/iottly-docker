@@ -7,3 +7,4 @@ git clone git@github.com:iottly/iottly-console.git
 git clone git@github.com:iottly/iottly-client-UI.git
 git clone git@github.com:iottly/iottly-client-core.git
 git clone git@github.com:iottly/iottly-core.git
+git clone git@github.com:iottly/iottly-http-load-balancer.git
