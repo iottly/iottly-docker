@@ -42,10 +42,10 @@ Iottly runs on Linux / Docker.
 
 ## How to access the services:
 
-- iottly-core and iottly-console:
-  - http://127.0.0.1:8520/admin
+- iottly-core and iottly-console via nginx proxy:
+  - http://127.0.0.1:8550/admin
 - MoC static console:
-  - http://127.0.0.1:8520/static/console.html
+  - http://127.0.0.1:8550/static/console.html
 - iottly-xmpp-broker:
   - http://127.0.0.1:9090
 - iottly-client-core and iottly-client-UI:
