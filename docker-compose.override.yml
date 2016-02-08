@@ -14,23 +14,22 @@
 # limitations under the License.
 # 
 
-iottlycore:
-  #be carefull! this won't scale in production
-  #java net doesn't like hostnames with "_" 
-  #so it's impossible for now to use native compose hostnames
-  #as openfire (java) need to access iottlycore
-  container_name: deviottlycore
-  #overlays application files with host dev ones:
-  volumes:
-   - ../iottly-core/iottly_core:/iottly-core/iottly_core
+version: '2'
+
+services:
+
+  iottlycore:
+    #overlays application files with host dev ones:
+    volumes:
+     - ../iottly-core/iottly_core:/iottly-core/iottly_core
 
 
-iottlyconsole:
-  #overlays application files with host dev ones:
-  volumes: 
-   - ../iottly-console/iottly_console:/iottly_console
+  iottlyconsole:
+    #overlays application files with host dev ones:
+    volumes: 
+     - ../iottly-console/iottly_console:/iottly_console
 
-iottlyclientui:
-  #overlays application files with host dev ones:
-  volumes: 
-   - ../iottly-client-UI/iottly_client_UI:/iottly_client_UI
+  iottlyclientui:
+    #overlays application files with host dev ones:
+    volumes: 
+     - ../iottly-client-UI/iottly_client_UI:/iottly_client_UI
