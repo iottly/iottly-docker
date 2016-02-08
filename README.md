@@ -73,7 +73,7 @@ For this purpose production services are defined in the main [`docker-compose.ym
 - to get logs of a running service (for example for iottlycore):
   - `docker-compose logs iottlycore`
 - to execute a shell within a running container (for example for iottlycore):
-  - `docker exec -i -t deviottlycore bash`
+  - `docker exec -i -t iottlydocker_iottlycore_1 bash`
   - note that you need to use the container name here, not the service name
 - to inspect the /etc/hosts file in a running container (for example for xmppbroker):
   - `docker exec -i -t iottlydocker_xmppbroker_1 cat /etc/hosts`

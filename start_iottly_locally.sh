@@ -1,1 +1,1 @@
-docker-compose --x-networking --x-network-driver=bridge up -d
+docker-compose --x-networking up -d

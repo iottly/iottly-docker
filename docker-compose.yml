@@ -14,49 +14,53 @@
 # limitations under the License.
 # 
 
-db:
-  image: mongo
+version: '2'
 
-xmppbroker:
-  build: ../iottly-xmpp-broker/.
-  ports:
-   - "9090:9090" 
-   - "5222:5222"
-   - "7777:7777"
-  # volumes:
-  #  - ../iottly_xmpp_broker/dev_openfire_data:/var/lib/openfire
+services:
 
+  db:
+    image: mongo
 
-
-iottlyconsole:
-  build: ../iottly-console/.
-  command: /bin/true
-
-
-iottlycore:
-  build: ../iottly-core/.
-  volumes_from: 
-   - iottlyconsole
-
-
-iottlyclientui:
-  build: ../iottly-client-UI/.
-  command: /bin/true
-  volumes: 
-   - /iottly_client_UI
-
-
-iottlyclientcore:
-  build: ../iottly-client-core/.
-  ports:
-   - "8521:8521"
-  volumes_from: 
-   - iottlyclientui
-
-
-iottlyhttploadbalancer:
-    build: ../iottly-http-load-balancer/.
+  xmppbroker:
+    build: ../iottly-xmpp-broker/.
     ports:
-      - "8550:8550"
+     - "9090:9090" 
+     - "5222:5222"
+     - "7777:7777"
+    # volumes:
+    #  - ../iottly-xmpp-broker/dev_openfire_data:/var/lib/openfire
+
+
+
+  iottlyconsole:
+    build: ../iottly-console/.
+    command: /bin/true
+
+
+  iottlycore:
+    build: ../iottly-core/.
     volumes_from: 
-      - iottlyconsole
+     - iottlyconsole
+
+
+  iottlyclientui:
+    build: ../iottly-client-UI/.
+    command: /bin/true
+    volumes: 
+     - /iottly_client_UI
+
+
+  iottlyclientcore:
+    build: ../iottly-client-core/.
+    ports:
+     - "8521:8521"
+    volumes_from: 
+     - iottlyclientui
+
+
+  iottlyhttploadbalancer:
+      build: ../iottly-http-load-balancer/.
+      ports:
+        - "8550:8550"
+      volumes_from: 
+        - iottlyconsole
