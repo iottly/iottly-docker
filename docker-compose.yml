@@ -28,7 +28,7 @@ services:
      - "5222:5222"
      - "7777:7777"
     # volumes:
-    #  - ../iottly-xmpp-broker/dev_openfire_data:/var/lib/openfire
+    #   - ../iottly-xmpp-broker/dev_openfire_data:/var/lib/openfire
 
 
 

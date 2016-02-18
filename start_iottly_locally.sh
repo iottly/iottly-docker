@@ -1,1 +1,1 @@
-docker-compose --x-networking up -d
+docker-compose up -d
