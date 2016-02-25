@@ -25,6 +25,9 @@ services:
     volumes:
      - ../iottly-core/iottly_core:/iottly-core/iottly_core
 
+  iottlyagentinstallers:
+    volumes: 
+     - ../iottly-device-agent-py/iottly-device-agent-py-installers:/iottly-device-agent-py-installers
 
   iottlyconsole:
     #overlays application files with host dev ones:

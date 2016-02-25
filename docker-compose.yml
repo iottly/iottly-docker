@@ -31,9 +31,18 @@ services:
     #   - ../iottly-xmpp-broker/dev_openfire_data:/var/lib/openfire
 
 
+  iottlyagentinstallers:
+    build:
+      context: ../iottly-device-agent-py
+      dockerfile: Dockerfile-installers
+    command: /bin/true
+    volumes: 
+     - /iottly-device-agent-py-installers
 
   iottlyconsole:
     build: ../iottly-console/.
+    volumes: 
+     - /iottly_console
     command: /bin/true
 
 
@@ -41,13 +50,14 @@ services:
     build: ../iottly-core/.
     volumes_from: 
      - iottlyconsole
+     - iottlyagentinstallers
 
 
   iottlyclientui:
     build: ../iottly-client-UI/.
-    command: /bin/true
     volumes: 
      - /iottly_client_UI
+    command: /bin/true
 
 
   iottlyclientcore:
