@@ -20,6 +20,8 @@ services:
 
   iottlycore:
     #overlays application files with host dev ones:
+    environment:
+      - PUBLIC_HOST=${HOST_IP_ADDRESS}
     volumes:
      - ../iottly-core/iottly_core:/iottly-core/iottly_core
 
