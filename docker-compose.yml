@@ -40,7 +40,9 @@ services:
      - /iottly-device-agent-py-installers
 
   iottlyconsole:
-    build: ../iottly-console/.
+    build:
+      context: ../iottly-console
+      dockerfile: Dockerfile-staticvolume
     volumes: 
      - /iottly_console
     command: /bin/true
