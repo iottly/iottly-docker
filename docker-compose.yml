@@ -73,6 +73,8 @@ services:
   iottlyhttploadbalancer:
       build: ../iottly-http-load-balancer/.
       ports:
-        - "8550:8550"
+        - "8550:8550" # api        
+        - "8560:8560" # web socket 
+        - "8580:8580" # front-end  
       volumes_from: 
         - iottlyconsole
