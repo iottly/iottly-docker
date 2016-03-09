@@ -25,6 +25,9 @@ services:
       - PUBLIC_XMPP_HOST=${HOST_IP_ADDRESS}
     volumes:
      - ../iottly-core/iottly_core:/iottly-core/iottly_core
+    ports:
+     - "8520:8520" 
+
 
   iottlyagentinstallers:
     volumes: 
