@@ -22,14 +22,17 @@ The iottly-docker repo defines and maintains the Iottly stack architecture and m
 Iottly runs on Linux / Docker.
 
 ## Docker:
-- install Docker (> 1.9.0): http://docs.docker.com/engine/installation/
-- install Docker Compose (> 1.5.1): https://docs.docker.com/compose/install/
+- install Docker (> 1.10.2): http://docs.docker.com/engine/installation/
+- install Docker Compose (> 1.6.0): https://docs.docker.com/compose/install/
 
 ## Clone Iottly repos:
 - `mkdir iottly`
 - `cd iottly`
 - clone each Iottly repo
 - eventually with [this script](https://raw.githubusercontent.com/iottly/iottly-docker/master/gitclone.sh)
+
+## Prepare iottly-console
+- see [bower install and Yeoman app Generator](https://github.com/iottly/iottly-console#bower-install-and-yeoman-app-generator)
 
 ## Start the full Iottly stack:
 - `cd iottly-docker`
