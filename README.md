@@ -45,14 +45,18 @@ Iottly runs on Linux / Docker.
   - pull required images from Docker Hub
   - build each Iottly component as per specific Dockerfile in each repo
   - start each component
-  - containers communicate via 'iottlydocker' (local) network created by Docker Compose
+
+Containers communicate via 'iottlydocker' (local) network created by Docker Compose.
 
 ## How to access the services:
 
-- iottly-core and iottly-console via nginx proxy:
-  - http://127.0.0.1:8550/admin
-- MoC static console:
-  - http://127.0.0.1:8550/static/console.html
+All services are exposed via [iottly-http-load-balancer](https://github.com/iottly/iottly-http-load-balancer):
+- iottly web application (iottly-console):
+  - http://127.0.0.1:8580/
+- iottly-core API:
+  - http://127.0.0.1:8550/v1.0/[service path]
+- iottly-core web socket:
+  - http://127.0.0.1:8560/v1.0
 - iottly-xmpp-broker:
   - http://127.0.0.1:9090
 - iottly-client-core and iottly-client-UI:
