@@ -38,6 +38,10 @@ Iottly runs on Linux / Docker.
 - `cd iottly-docker`
 - `./start_iottly_locally.sh`
 - this will:
+  - set the env var `HOST_IP_ADDRESS` with the IP address of your dev box 
+    - the address is the one with which your box is connected to the local network (via eth or wlan)
+    - this allows testing the dev env of Iottly with physical devices connected to your local network
+    - if you are running Docker on non Linux OS maybe you need to set a bridge networking on the underlying VBox machine 
   - pull required images from Docker Hub
   - build each Iottly component as per specific Dockerfile in each repo
   - start each component
