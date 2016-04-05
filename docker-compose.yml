@@ -53,6 +53,8 @@ services:
     volumes_from: 
      - iottlyconsole
      - iottlyagentinstallers
+    volumes:
+      - fw:/var/iottly-core/uploads/fw/
 
 
   iottlyclientui:
@@ -78,3 +80,7 @@ services:
         - "8580:8580" # front-end  
       volumes_from: 
         - iottlyconsole
+
+volumes:
+  fw:
+    external: false
