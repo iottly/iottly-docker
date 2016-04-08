@@ -47,12 +47,20 @@ services:
      - /iottly_console
     command: /bin/true
 
+  iottlyfwsnippettpl:
+    build:
+      context: ../iottly-core
+      dockerfile: Dockerfile-fwsnippettpls
+    command: /bin/true
+    volumes:
+    - /fw-snippet-tpl
 
   iottlycore:
     build: ../iottly-core/.
     volumes_from: 
      - iottlyconsole
      - iottlyagentinstallers
+     - iottlyfwsnippettpl
     volumes:
       - fw:/var/iottly-core/uploads/fw/
 

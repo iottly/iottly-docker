@@ -38,6 +38,10 @@ services:
     volumes: 
      - ../iottly-console/iottly_console:/iottly_console
 
+  iottlyfwsnippettpl:
+    volumes: 
+     - ../iottly-core//fw-snippet-tpl:/fw-snippet-tpl
+
   iottlyclientui:
     #overlays application files with host dev ones:
     volumes: 
