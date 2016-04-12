@@ -40,7 +40,7 @@ services:
 
   iottlyfwsnippettpl:
     volumes: 
-     - ../iottly-core//fw-snippet-tpl:/fw-snippet-tpl
+     - ../iottly-core/fw-snippet-tpl:/fw-snippet-tpl
 
   iottlyclientui:
     #overlays application files with host dev ones:

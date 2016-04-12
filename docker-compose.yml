@@ -81,11 +81,9 @@ services:
      - iottlyclientui
 
   certificates:
-    build:
-      context: ../letsencrypt
-      dockerfile: Dockerfile-certificates
+    image: ubuntu
     volumes:
-      - /etc/letsencrypt
+      - ../letsencrypt/letsencrypt/etc/letsencrypt:/etc/letsencrypt
 
   iottlyhttploadbalancer:
     build: ../iottly-http-load-balancer/.
