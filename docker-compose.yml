@@ -96,6 +96,8 @@ services:
     volumes_from: 
       - iottlyconsole
       - certificates
+    depends_on:
+      - iottlycore
 
 volumes:
   fw:
