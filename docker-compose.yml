@@ -83,14 +83,12 @@ services:
   certificates:
     image: ubuntu
     volumes:
-      - ../letsencrypt/letsencrypt/etc/letsencrypt:/etc/letsencrypt
+      - ../iottly-http-load-balancer/iottly-letsencrypt/letsencrypt/etc/letsencrypt:/etc/letsencrypt
+    command: /bin/true
 
   iottlyhttploadbalancer:
     build: ../iottly-http-load-balancer/.
     ports:
-      - "8550:8550" # api        
-      - "8560:8560" # web socket 
-      - "8580:8580" # front-end  
       - "80:80"
       - "443:443"
     volumes: 

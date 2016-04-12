@@ -46,3 +46,11 @@ services:
     #overlays application files with host dev ones:
     volumes: 
      - ../iottly-client-UI/iottly_client_UI:/iottly_client_UI
+
+  iottlyhttploadbalancer:
+    ports:
+      - "8550:8550" # api        
+      - "8560:8560" # web socket 
+      - "8580:8580" # front-end    
+    volumes: 
+     - ../iottly-http-load-balancer/nginx_conf_dev/conf.d:/etc/nginx/conf.d
