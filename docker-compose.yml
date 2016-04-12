@@ -80,6 +80,12 @@ services:
     volumes_from: 
      - iottlyclientui
 
+  certificates:
+    build:
+      context: ../letsencrypt
+      dockerfile: Dockerfile-certificates
+    volumes:
+      - /etc/letsencrypt
 
   iottlyhttploadbalancer:
     build: ../iottly-http-load-balancer/.
@@ -88,10 +94,12 @@ services:
       - "8560:8560" # web socket 
       - "8580:8580" # front-end  
       - "80:80"
+      - "443:443"
     volumes: 
      - /usr/share/nginx/html/
     volumes_from: 
       - iottlyconsole
+      - certificates
 
 volumes:
   fw:
