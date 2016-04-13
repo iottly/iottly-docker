@@ -66,6 +66,7 @@ services:
       - PUBLIC_HOST_PORT_PATTERN={}
       - XMPP_MGMT_REST_SECRET=${XMPP_MGMT_REST_SECRET}
       - XMPP_PASSWORD=${XMPP_PASSWORD}
+      - PUBLIC_URL_PATTERN=https://{}/{}
     volumes:
       - fw:/var/iottly-core/uploads/fw/
       - coderepo:/var/iottly-core/coderepo/
