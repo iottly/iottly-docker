@@ -68,6 +68,8 @@ services:
       - XMPP_PASSWORD=${XMPP_PASSWORD}
       - PUBLIC_URL_PATTERN=https://{}/{}
       - IOTTLY_REGISTRATION_PROTOCOL=https
+      - XMPP_DOMAIN=${XMPP_DOMAIN}
+      - XMPP_USER=${XMPP_USER}
     volumes:
       - fw:/var/iottly-core/uploads/fw/
       - coderepo:/var/iottly-core/coderepo/

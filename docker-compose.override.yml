@@ -32,6 +32,8 @@ services:
       - XMPP_PASSWORD=iottlycore
       - PUBLIC_URL_PATTERN=http://{}/{}
       - IOTTLY_REGISTRATION_PROTOCOL=http
+      - XMPP_DOMAIN=xmppbroker.localdev.iottly.org
+      - XMPP_USER=iottlycore@xmppbroker.localdev.iottly.org
     volumes:
      - ../iottly-core/iottly_core:/iottly-core/iottly_core
     # ports:
