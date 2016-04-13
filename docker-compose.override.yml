@@ -18,6 +18,10 @@ version: '2'
 
 services:
 
+  xmppbroker:
+    ports:
+     - "9090:9090" 
+
   iottlycore:
     #overlays application files with host dev ones:
     environment:

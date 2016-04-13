@@ -24,7 +24,6 @@ services:
   xmppbroker:
     build: ../iottly-xmpp-broker/.
     ports:
-     - "9090:9090" 
      - "5222:5222"
      - "7777:7777"
     # volumes:
