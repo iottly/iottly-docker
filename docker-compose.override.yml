@@ -23,6 +23,7 @@ services:
     environment:
       - PUBLIC_HOST=${HOST_IP_ADDRESS}
       - PUBLIC_XMPP_HOST=${HOST_IP_ADDRESS}
+      - PUBLIC_HOST_PORT_PATTERN={}:8550
     volumes:
      - ../iottly-core/iottly_core:/iottly-core/iottly_core
     # ports:

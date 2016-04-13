@@ -64,6 +64,7 @@ services:
     environment:
       - PUBLIC_HOST=${API_HOSTNAME}
       - PUBLIC_XMPP_HOST=${BROKER_HOSTNAME}
+      - PUBLIC_HOST_PORT_PATTERN={}
     volumes:
       - fw:/var/iottly-core/uploads/fw/
       - coderepo:/var/iottly-core/coderepo/
