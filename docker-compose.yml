@@ -101,6 +101,7 @@ services:
       - certificates
     depends_on:
       - iottlycore
+      - xmppbroker
 
 volumes:
   fw:
