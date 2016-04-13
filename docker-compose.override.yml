@@ -31,6 +31,7 @@ services:
       - XMPP_MGMT_REST_SECRET=EKdj6y0USG4tP4Ki
       - XMPP_PASSWORD=iottlycore
       - PUBLIC_URL_PATTERN=http://{}/{}
+      - IOTTLY_REGISTRATION_PROTOCOL=http
     volumes:
      - ../iottly-core/iottly_core:/iottly-core/iottly_core
     # ports:
