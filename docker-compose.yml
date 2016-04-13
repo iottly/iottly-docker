@@ -43,6 +43,9 @@ services:
     build:
       context: ../iottly-console
       dockerfile: Dockerfile-staticvolume
+    environment:
+      - PUBLIC_HOST=${API_HOSTNAME}
+      - PUBLIC_XMPP_HOST=${BROKER_HOSTNAME}
     volumes: 
      - /iottly_console
     command: /bin/true
