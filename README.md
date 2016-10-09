@@ -32,7 +32,7 @@ Iottly runs on Linux / Docker.
 - eventually with [this script](https://raw.githubusercontent.com/iottly/iottly-docker/master/gitclone.sh)
 
 ## Prepare iottly-console
-- see [bower install and Yeoman app Generator](https://github.com/iottly/iottly-console#bower-install-and-yeoman-app-generator)
+- see [after a fresh clone](https://github.com/iottly/iottly-console#after-a-fresh-clone) in iottly-console repo.
 
 ## Start the full Iottly stack:
 - `cd iottly-docker`
