@@ -15,7 +15,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 
 # iottly-docker
-The iottly-docker repo defines and maintains the Iottly stack architecture and made it easy to run the full environment in both production and development.
+The iottly-docker repo defines and maintains the Iottly stack architecture and makes it easy to run the full environment in both production and development.
 
 # How to setup Iottly locally
 
