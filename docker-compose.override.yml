@@ -35,10 +35,17 @@ services:
       - XMPP_DOMAIN=xmppbroker.localdev.iottly.org
       - XMPP_USER=iottlycore@xmppbroker.localdev.iottly.org
     volumes:
-     - ../iottly-core/iottly_core:/iottly-core/iottly_core
+      - ../iottly-core/iottly_core:/iottly-core/iottly_core
     # ports:
     #  - "8520:8520" 
 
+  iottlydeviceimagemanager:
+    volumes:
+      - ../iottly-device-image-manager/iottly_device_image_manager:/iottly-device-image-manager/iottly_device_image_manager
+      - ../iottly-device-image-manager/iottly_device_images:/iottly-device-image-manager/iottly_device_images
+      - ../iottly-device-image-manager/iottly_device_images_tools:/iottly-device-image-manager/iottly_device_images_tools
+    ports:
+      - "8520:8620" 
 
   iottlyagentinstallers:
     volumes: 

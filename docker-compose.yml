@@ -52,14 +52,14 @@ services:
       dockerfile: Dockerfile-fwsnippettpls
     command: /bin/true
     volumes:
-    - /fw-snippet-tpl
+      - /fw-snippet-tpl
 
   iottlycore:
     build: ../iottly-core/.
     volumes_from: 
-     - iottlyconsole
-     - iottlyagentinstallers
-     - iottlyfwsnippettpl
+      - iottlyconsole
+      - iottlyagentinstallers
+      - iottlyfwsnippettpl
     environment:
       - PUBLIC_HOST=${API_HOSTNAME}
       - PUBLIC_XMPP_HOST=${BROKER_HOSTNAME}
@@ -74,20 +74,26 @@ services:
       - fw:/var/iottly-core/uploads/fw/
       - coderepo:/var/iottly-core/coderepo/
 
+  iottlydeviceimagemanager:
+    build: ../iottly-device-image-manager/.
+    volumes: 
+      - /iottly-device-image-manager/iottly_device_images
+    privileged: true
+
 
   iottlyclientui:
     build: ../iottly-client-UI/.
     volumes: 
-     - /iottly_client_UI
+      - /iottly_client_UI
     command: /bin/true
 
 
   iottlyclientcore:
     build: ../iottly-client-core/.
     ports:
-     - "8521:8521"
+      - "8521:8521"
     volumes_from: 
-     - iottlyclientui
+      - iottlyclientui
 
   certificates:
     image: ubuntu
@@ -101,7 +107,7 @@ services:
       - "80:80"
       - "443:443"
     volumes: 
-     - /usr/share/nginx/html/
+      - /usr/share/nginx/html/
     volumes_from: 
       - iottlyconsole
       - certificates
