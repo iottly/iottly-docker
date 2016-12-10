@@ -76,6 +76,8 @@ services:
 
   iottlydeviceimagemanager:
     build: ../iottly-device-image-manager/.
+    volumes_from: 
+      - iottlyagentinstallers
     volumes: 
       - /iottly-device-image-manager/iottly_device_images
     privileged: true
