@@ -29,6 +29,10 @@ services:
     # volumes:
     #   - ../iottly-xmpp-broker/dev_openfire_data:/var/lib/openfire
 
+  mqttbroker:
+    build: ../iottly-mqtt-broker/.
+    ports:
+      - "1883:1883"
 
   iottlyagentinstallers:
     build:
