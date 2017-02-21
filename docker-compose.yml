@@ -19,7 +19,11 @@ version: '2'
 services:
 
   db:
-    image: mongo
+    build: ../iottly-db/.
+    environment:
+      - MQTT_BRIDGE_USERNAME=mosq-bridge
+      - MQTT_BRIDGE_ENC_PWD=${MQTT_BRIDGE_ENC_PWD}
+      - MQTT_COMMAND_TOPIC=/iottly/+/+/commands
 
   xmppbroker:
     build: ../iottly-xmpp-broker/.
@@ -35,8 +39,7 @@ services:
       - BRIDGECONF=/mosquitto/bridge-config/bridge.conf
       - NODELIST=iottlydocker_mqttbroker_1:1884 iottlydocker_mqttbroker_2:1884
       - BRIDGE_REMOTE_USERNAME=mosq-bridge
-      - BRIDGE_REMOTE_PASSWORD=bridgepassword
-
+      - BRIDGE_REMOTE_PASSWORD=${MQTT_BRIDGE_PWD}
 
   mqttbroker:
     build: ../iottly-mqtt-broker/broker/.

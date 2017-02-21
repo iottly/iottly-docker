@@ -18,6 +18,15 @@ version: '2'
 
 services:
 
+  db:
+    environment:
+      - MQTT_BRIDGE_ENC_PWD=PBKDF2$$sha256$$901$$G3BatbMS88ks2gpx$$h2V+ufI7/UM6XjeJMHBSdQGPkdwjdWgh
+
+  mqttbrokerbridge:
+    environment:
+      - BRIDGE_REMOTE_PASSWORD=bridgepassword
+
+
   xmppbroker:
     ports:
      - "9090:9090" 
