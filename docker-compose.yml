@@ -30,12 +30,16 @@ services:
     #   - ../iottly-xmpp-broker/dev_openfire_data:/var/lib/openfire
 
   mqttbrokerbridge:
-    build:
-      context: ../iottly-mqtt-broker
-      dockerfile: Dockerfile-bridge
+    build: ../iottly-mqtt-broker/bridge/.
+    environment:
+      - BRIDGECONF=/mosquitto/bridge-config/bridge.conf
+      - NODELIST=iottlydocker_mqttbroker_1:1884 iottlydocker_mqttbroker_2:1884
+      - BRIDGE_REMOTE_USERNAME=mosq-bridge
+      - BRIDGE_REMOTE_PASSWORD=bridgepassword
+
 
   mqttbroker:
-    build: ../iottly-mqtt-broker/.
+    build: ../iottly-mqtt-broker/broker/.
     ports:
       - "1883"
 
