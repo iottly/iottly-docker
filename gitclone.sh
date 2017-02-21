@@ -1,3 +1,4 @@
+git clone https://github.com/iottly/iottly-db.git
 git clone https://github.com/iottly/iottly-xmpp-broker.git
 git clone https://github.com/iottly/iottly-mqtt-broker.git
 git clone https://github.com/iottly/iottly-licence-adder.git
