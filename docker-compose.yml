@@ -36,7 +36,7 @@ services:
     environment:
       - HTTPFORWARD_ALLOWEDRECIPIENTS=
       - HTTPFORWARD_RECIPIENTROUTES=
-      - HTTPFORWARD_TARGET=http://iottlycore:8520/msg
+      - HTTPFORWARD_TARGET=http://iottlycore:8520/msg/xmpp
       - XMPP_DOMAIN=${XMPP_DOMAIN}
       - XMPP_USERNAME=${XMPP_USERNAME}
       - XMPP_PASSWORD_ENC=${XMPP_PASSWORD_ENC}
