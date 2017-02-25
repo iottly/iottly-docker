@@ -38,6 +38,9 @@ services:
       - HTTPFORWARD_RECIPIENTROUTES=
       - HTTPFORWARD_TARGET=http://iottlycore:8520/msg
       - XMPP_DOMAIN=${XMPP_DOMAIN}
+      - XMPP_USERNAME=${XMPP_USERNAME}
+      - XMPP_PASSWORD_ENC=${XMPP_PASSWORD_ENC}
+      - XMPP_MGMT_REST_SECRET=${XMPP_MGMT_REST_SECRET}
 
   mqttbrokerbridge:
     build: ../iottly-mqtt-broker/bridge/.
@@ -91,7 +94,7 @@ services:
       - PUBLIC_URL_PATTERN=https://{}/{}
       - IOTTLY_REGISTRATION_PROTOCOL=https
       - XMPP_DOMAIN=${XMPP_DOMAIN}
-      - XMPP_USER=${XMPP_USER}
+      - XMPP_USERNAME=${XMPP_USERNAME}
     volumes:
       - fw:/var/iottly-core/uploads/fw/
       - coderepo:/var/iottly-core/coderepo/
