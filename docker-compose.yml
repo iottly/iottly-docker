@@ -30,8 +30,14 @@ services:
     ports:
      - "5222:5222"
      - "7777:7777"
-    # volumes:
-    #   - ../iottly-xmpp-broker/dev_openfire_data:/var/lib/openfire
+    #uncomment following to persist xmpp database to host volume
+    #volumes:
+    #  - ../iottly-xmpp-broker/persist_data:/var/lib/openfire
+    environment:
+      - HTTPFORWARD_ALLOWEDRECIPIENTS=
+      - HTTPFORWARD_RECIPIENTROUTES=
+      - HTTPFORWARD_TARGET=http://iottlycore:8520/msg
+      - XMPP_DOMAIN=${XMPP_DOMAIN}
 
   mqttbrokerbridge:
     build: ../iottly-mqtt-broker/bridge/.
