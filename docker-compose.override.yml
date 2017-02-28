@@ -36,6 +36,7 @@ services:
     environment:
       - PUBLIC_HOST=${HOST_IP_ADDRESS}
       - PUBLIC_XMPP_HOST=${HOST_IP_ADDRESS}
+      - PUBLIC_MQTT_HOST=${HOST_IP_ADDRESS}      
       - PUBLIC_HOST_PORT_PATTERN={}:8550
       - XMPP_MGMT_REST_SECRET=EKdj6y0USG4tP4Ki
       - XMPP_PASSWORD=iottlycore

@@ -53,7 +53,7 @@ services:
   mqttbroker:
     build: ../iottly-mqtt-broker/broker/.
     ports:
-      - "1883"
+      - "1883:1883"
 
   iottlyagentinstallers:
     build:
@@ -87,7 +87,8 @@ services:
      - iottlyfwsnippettpl
     environment:
       - PUBLIC_HOST=${API_HOSTNAME}
-      - PUBLIC_XMPP_HOST=${BROKER_HOSTNAME}
+      - PUBLIC_XMPP_HOST=${XMPP_BROKER_HOSTNAME}
+      - PUBLIC_MQTT_HOST=${MQTT_BROKER_HOSTNAME}
       - PUBLIC_HOST_PORT_PATTERN={}
       - XMPP_MGMT_REST_SECRET=${XMPP_MGMT_REST_SECRET}
       - XMPP_PASSWORD=${XMPP_PASSWORD}

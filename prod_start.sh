@@ -1,5 +1,6 @@
 export API_HOSTNAME=demoapi.iottly.org
-export BROKER_HOSTNAME=demobroker.iottly.org
+export XMPP_BROKER_HOSTNAME}=demobroker.iottly.org
+export MQTT_BROKER_HOSTNAME}=mqttdemobroker.iottly.org
 export XMPP_MGMT_REST_SECRET=secret
 export XMPP_PASSWORD=secret
 export XMPP_DOMAIN=xmpphost
