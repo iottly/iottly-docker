@@ -23,7 +23,7 @@ services:
     environment:
       - MQTT_BRIDGE_USERNAME=mosq-bridge
       - MQTT_BRIDGE_ENC_PWD=${MQTT_BRIDGE_ENC_PWD}
-      - MQTT_COMMAND_TOPIC=/iottly/+/+/commands
+      - MQTT_COMMAND_TOPIC=${IOTTLY_MQTT_TOPIC_COMMANDS}
 
   xmppbroker:
     build: ../iottly-xmpp-broker/.
@@ -46,7 +46,9 @@ services:
     build: ../iottly-mqtt-broker/bridge/.
     environment:
       - BRIDGECONF=/mosquitto/bridge-config/bridge.conf
-      - NODELIST=iottlydocker_mqttbroker_1:1884 iottlydocker_mqttbroker_2:1884
+      - IOTTLY_MQTT_TOPIC_COMMANDS=${IOTTLY_MQTT_TOPIC_COMMANDS}
+      #- NODELIST=iottlydocker_mqttbroker_1:1884 iottlydocker_mqttbroker_2:1884
+      - NODELIST=iottlydocker_mqttbroker_1:1884
       - BRIDGE_REMOTE_USERNAME=mosq-bridge
       - BRIDGE_REMOTE_PASSWORD=${MQTT_BRIDGE_PWD}
 
