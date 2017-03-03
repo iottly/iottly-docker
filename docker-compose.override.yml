@@ -49,6 +49,10 @@ services:
     # ports:
     #  - "8520:8520" 
 
+  iottlyws:
+    volumes:
+     - ../iottly-websocket/iottly_websocket:/iottly-websocket/iottly_websocket
+
 
   iottlyagentinstallers:
     volumes: 

@@ -10,3 +10,5 @@ git clone https://github.com/iottly/iottly-client-UI.git
 git clone https://github.com/iottly/iottly-client-core.git
 git clone https://github.com/iottly/iottly-core.git
 git clone https://github.com/iottly/iottly-http-load-balancer.git
+git clone https://github.com/iottly/iottly-websocket.git
+git clone https://github.com/iottly/iottly-rabbitmq.git

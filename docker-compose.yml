@@ -18,6 +18,11 @@ version: '2'
 
 services:
 
+  rabbitmq:
+    build: ../iottly-rabbitmq/.
+    environment:
+      - ERLANG_COOKIE=abcdefg    
+
   db:
     build: ../iottly-db/.
     environment:
@@ -101,6 +106,9 @@ services:
     volumes:
       - fw:/var/iottly-core/uploads/fw/
       - coderepo:/var/iottly-core/coderepo/
+
+  iottlyws:
+    build: ../iottly-websocket/.
 
 
   iottlyclientui:
