@@ -49,6 +49,14 @@ services:
     # ports:
     #  - "8520:8520" 
 
+  iottlyauthentication:
+    volumes:
+     - ../iottly-authentication/iottly_authentication:/iottly-authentication/iottly_authentication
+    environment:
+      - PUBLIC_HOST=${HOST_IP_ADDRESS}
+      - PUBLIC_URL_PATTERN=http://{}/{}
+
+
   iottlyws:
     volumes:
      - ../iottly-websocket/iottly_websocket:/iottly-websocket/iottly_websocket
