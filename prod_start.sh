@@ -7,5 +7,6 @@ export XMPP_DOMAIN=xmpphost
 export XMPP_USERNAME=xmppuser
 export XMPP_PASSWORD_ENC=enc_secret
 export IOTTLY_MQTT_TOPIC_COMMANDS=/iottly/management/+/+/commands
+export COOKIE_SECRET=iottlycookiesecret
 
 docker-compose -f docker-compose.yml up -d

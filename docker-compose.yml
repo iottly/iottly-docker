@@ -18,6 +18,9 @@ version: '2'
 
 services:
 
+  redis:
+    image: redis
+
   rabbitmq:
     build: ../iottly-rabbitmq/.
     environment:
@@ -86,6 +89,14 @@ services:
     volumes:
     - /fw-snippet-tpl
 
+  iottlyauthentication:
+    build: ../iottly-authentication/.
+    ports:
+      - "8523:8523"
+    environment:
+      - REDIS_HOST=redis
+      - COOKIE_SECRET=${COOKIE_SECRET}
+
   iottlycore:
     build: ../iottly-core/.
     volumes_from: 
@@ -103,12 +114,15 @@ services:
       - IOTTLY_REGISTRATION_PROTOCOL=https
       - XMPP_DOMAIN=${XMPP_DOMAIN}
       - XMPP_USERNAME=${XMPP_USERNAME}
+      - COOKIE_SECRET=${COOKIE_SECRET}
     volumes:
       - fw:/var/iottly-core/uploads/fw/
       - coderepo:/var/iottly-core/coderepo/
 
   iottlyws:
     build: ../iottly-websocket/.
+    environment:
+      - COOKIE_SECRET=${COOKIE_SECRET}
 
 
   iottlyclientui:
