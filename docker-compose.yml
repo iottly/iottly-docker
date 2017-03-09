@@ -29,6 +29,9 @@ services:
       - MQTT_BRIDGE_USERNAME=mosq-bridge
       - MQTT_BRIDGE_ENC_PWD=${MQTT_BRIDGE_ENC_PWD}
       - MQTT_COMMAND_TOPIC=${IOTTLY_MQTT_TOPIC_COMMANDS}
+      - MQTT_POSTHTTP_USERNAME=posthttp
+      - MQTT_POSTHTTP_TOPIC=${IOTTLY_MQTT_TOPIC_EVENTS}
+
 
   xmppbroker:
     build: ../iottly-xmpp-broker/.
